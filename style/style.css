@@ -1,23 +1,15 @@
-/**
- * Reset
- */
+
  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/**
- * Eléments génériques
- */
-
 body {
-    --color-primary: #f76c5e;
-    --color-secondary: #f68e5f;
-    --color-tertiary: #ffeee6;    
+    --color-primary: #e42020;
+    --color-secondary: #461e02;
+    --color-tertiary: #fbf9f8;    
 }
-
-/* Mise en forme des titres */
 h1 {
     margin: 10px;
     font-size: 60px;
@@ -39,9 +31,9 @@ h3 {
     color: var(--color-secondary);
 }
 
-/* Mise en forme des formulaires */
+
 input[type='radio'] {
-    filter: grayscale(1); /* Grayscale passe le bouton en niveau de gris */
+    filter: grayscale(1);
 }
 
 
@@ -88,9 +80,6 @@ button:focus {
     
 }
 
-/**
- * Eléments principaux
- */
 body {
     display: flex;
     flex-direction: column;
@@ -136,11 +125,6 @@ footer {
     background-color: var(--color-secondary);
 }
 
-/**
- * Mise en forme des éléments de la zone principale
- */
-
-/* Zone d'options */
 .optionSource {
     margin: 20px;
 }
@@ -149,7 +133,6 @@ footer {
     margin-left: 20px;
 }
 
-/* Zone ou sera affiché le texte (mot ou phrase) à afficher */
 .zoneProposition {
     display: flex;
     align-items: center;
@@ -164,7 +147,6 @@ footer {
     color: var(--color-primary);
 }
 
-/* Zone de saisie */
 .zoneSaisie {
     display: flex;
     justify-content: space-between;
@@ -172,7 +154,7 @@ footer {
     margin-bottom: 30px;
 }
 
-/* Eléments du formulaire de saisie */
+
 .zoneSaisie input[type='text'] {
     width: 80%;
 }
@@ -189,9 +171,6 @@ footer {
     padding-top: 20px;
 }
 
-/**
-  * Gestion des popups
-  */
 
 .popupBackground {
     display: none;
@@ -237,33 +216,10 @@ footer {
     padding-bottom: 15px;
 }
 
-/* Eléments de formulaire */
 .popup input {
     margin-bottom: 10px;
 }
 
 .popup button {
     margin: 5px;
-}
-
-/** 
- * Responsive
- */
-
-
- /* En dessous de 1200 px */
-@media screen and (max-width: 1200px) {
-    main {
-        width: 60%;
-        padding: 30px;
-    }
-}
-
-
-/* En dessous de 800 px */
-@media screen and (max-width: 800px) {
-    main {
-        width: 90%;
-        padding: 10px;
-    }
 }

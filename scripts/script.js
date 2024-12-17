@@ -1,8 +1,4 @@
-/*********************************************************************************
- * 
- * Ce fichier contient toutes les fonctions nécessaires au fonctionnement du jeu. 
- * 
- *********************************************************************************/
+
 
 /**
  * Cette fonction affiche dans la console le score de l'utilisateur
@@ -21,7 +17,7 @@ function afficherResultat(score, nbMotsProposes) {
 /**
  * Cette fonction affiche une proposition, que le joueur devra recopier, 
  * dans la zone "zoneProposition"
- * @param {string} proposition : la proposition à afficher
+  @param {string} proposition : la proposition à afficher
  */
 function afficherProposition(proposition) {
     let zoneProposition = document.querySelector(".zoneProposition")
@@ -29,10 +25,10 @@ function afficherProposition(proposition) {
 }
 
 /**
- * Cette fonction construit et affiche l'email. 
- * @param {string} nom : le nom du joueur
- * @param {string} email : l'email de la personne avec qui il veut partager son score
- * @param {string} score : le score. 
+ Cette fonction construit et affiche l'email. 
+  @param {string} nom 
+  @param {string} email 
+  @param {string} score 
  */
 function afficherEmail(nom, email, score) {
     let mailto = `mailto:${email}?subject=Partage du score Azertype&body=Salut, je suis ${nom} et je viens de réaliser le score ${score} sur le site d'Azertype !`
@@ -87,8 +83,8 @@ function afficherMessageErreur(message) {
 }
 
 /**
- * Cette fonction permet de récupérer les informations dans le formulaire
- * de la popup de partage et d'appeler l'affichage de l'email avec les bons paramètres.
+ //Cette fonction permet de récupérer les informations dans le formulaire
+ // de la popup de partage et d'appeler l'affichage de l'email avec les bons paramètres.
  * @param {string} scoreEmail 
  */
 function gererFormulaire(scoreEmail) {
@@ -126,8 +122,6 @@ function lancerJeu() {
 
 
     afficherProposition(listeProposition[i])
-
-    // Gestion de l'événement click sur le bouton "valider"
     btnValiderMot.addEventListener("click", () => {
         if (inputEcriture.value === listeProposition[i]) {
             score++
@@ -137,9 +131,7 @@ function lancerJeu() {
         inputEcriture.value = ''
         if (listeProposition[i] === undefined) {
             afficherProposition("Le jeu est fini")
-            // On désactive le bouton valider
             btnValiderMot.disabled = true
-            // On désactive les boutons radios
             for (let indexBtnRadio = 0; indexBtnRadio < listeBtnRadio.length; indexBtnRadio++) {
                 listeBtnRadio[indexBtnRadio].disabled = true
             }
@@ -158,10 +150,8 @@ function lancerJeu() {
             if (event.target.value === "1") {
                 listeProposition = listeMots
             } else {
-                // Sinon nous voulons jouer avec la liste des phrases
                 listeProposition = listePhrases
-            }
-            // Et on modifie l'affichage en direct. 
+            } 
             afficherProposition(listeProposition[i])
         })
     }
